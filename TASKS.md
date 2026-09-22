@@ -11,12 +11,6 @@ Before any milestone moves to Done, all of the following must be true:
 
 ## To Do
 
-- **TASK-2: Data loading and basic structure**
-  Load and parse the sales CSV into a usable DataFrame.
-  - [ ] Loads `data/sales-data.csv` and correctly parses date, numeric, and categorical columns
-  - [ ] Missing or malformed CSV is handled cleanly, without a crash
-  - Commit:
-
 - **TASK-3: KPI cards implementation**
   Display the two headline metrics at the top of the dashboard.
   - [ ] Total Sales shown as formatted currency ($X,XXX,XXX)
@@ -51,6 +45,13 @@ Before any milestone moves to Done, all of the following must be true:
 ## In Progress
 
 ## Done
+
+- **TASK-2: Data loading and basic structure**
+  Load and parse the sales CSV into a usable DataFrame.
+  - [x] Loads `data/sales-data.csv` and correctly parses date, numeric, and categorical columns
+  - [x] Missing or malformed CSV is handled cleanly, without a crash
+  - Commit: eac8080
+  - Notes: Bare `pytest` couldn't import sales_data.py (ModuleNotFoundError) since the project had no config putting the project root on sys.path; root cause confirmed via `python -m pytest` vs. bare `pytest`. Fixed by adding pytest.ini (`pythonpath = .`), not part of the original plan. No test or implementation code changed.
 
 - **TASK-1: Environment setup and project initialization**
   Set up the project structure, dependencies, and a minimal runnable Streamlit app.
