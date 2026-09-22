@@ -25,14 +25,15 @@ Before any milestone moves to Done, all of the following must be true:
 
 ## In Progress
 
+## Done
+
 - **TASK-5: Category and region breakdowns**
   Add bar charts for sales by category and by region.
-  - [ ] Category bar chart shows all categories, sorted highest to lowest
-  - [ ] Region bar chart shows all regions, sorted highest to lowest
-  - [ ] Both charts have interactive tooltips with exact values
-  - Commit:
-
-## Done
+  - [x] Category bar chart shows all categories, sorted highest to lowest
+  - [x] Region bar chart shows all regions, sorted highest to lowest
+  - [x] Both charts have interactive tooltips with exact values
+  - Commit: f9ffa6d
+  - Notes: The plan's own test for `compute_sales_by_region` had its expected values backwards — asserting ascending order despite the test name and this milestone's acceptance criteria both calling for descending. Fixed the test to expect descending order to match `compute_sales_by_category`'s identical sort pattern; no implementation code needed to change. Verified against the real CSV: top category is Electronics, all four regions present — both match the PRD.
 
 - **TASK-4: Sales trend chart**
   Add a line chart showing sales over time.
