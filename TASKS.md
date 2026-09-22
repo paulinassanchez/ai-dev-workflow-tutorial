@@ -11,12 +11,6 @@ Before any milestone moves to Done, all of the following must be true:
 
 ## To Do
 
-- **TASK-4: Sales trend chart**
-  Add a line chart showing sales over time.
-  - [ ] Line chart plots sales by date (daily or monthly) with correct values
-  - [ ] Interactive tooltips show exact values on hover
-  - Commit:
-
 - **TASK-5: Category and region breakdowns**
   Add bar charts for sales by category and by region.
   - [ ] Category bar chart shows all categories, sorted highest to lowest
@@ -37,6 +31,12 @@ Before any milestone moves to Done, all of the following must be true:
   - Commit:
 
 ## In Progress
+
+- **TASK-4: Sales trend chart**
+  Add a line chart showing sales over time.
+  - [ ] Line chart plots sales by date (daily or monthly) with correct values
+  - [ ] Interactive tooltips show exact values on hover
+  - Commit:
 
 ## Done
 
