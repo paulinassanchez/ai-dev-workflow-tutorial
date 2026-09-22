@@ -28,7 +28,7 @@ col1.metric("Total Sales", f"${total_sales:,.0f}")
 col2.metric("Total Orders", f"{total_orders:,}")
 
 trend = compute_monthly_trend(df)
-trend["month_label"] = trend["month"].astype(str)
+trend["month_label"] = trend["month"].dt.strftime("%b %Y")
 
 st.subheader("Sales Trend")
 trend_fig = px.line(trend, x="month_label", y="total_sales", markers=True)
