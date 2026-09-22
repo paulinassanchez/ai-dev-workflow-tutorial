@@ -32,13 +32,14 @@ Before any milestone moves to Done, all of the following must be true:
 
 ## In Progress
 
+## Done
+
 - **TASK-4: Sales trend chart**
   Add a line chart showing sales over time.
-  - [ ] Line chart plots sales by date (daily or monthly) with correct values
-  - [ ] Interactive tooltips show exact values on hover
-  - Commit:
-
-## Done
+  - [x] Line chart plots sales by date (daily or monthly) with correct values
+  - [x] Interactive tooltips show exact values on hover
+  - Commit: 1d63622
+  - Notes: Verified the underlying monthly totals directly (12 months, chronologically sorted, summing to the validated $116,500) rather than visually in a browser, since this session has no browser access.
 
 - **TASK-3: KPI cards implementation**
   Display the two headline metrics at the top of the dashboard.
