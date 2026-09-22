@@ -11,12 +11,6 @@ Before any milestone moves to Done, all of the following must be true:
 
 ## To Do
 
-- **TASK-1: Environment setup and project initialization**
-  Set up the project structure, dependencies, and a minimal runnable Streamlit app.
-  - [ ] `streamlit run app.py` launches without errors and shows a page title
-  - [ ] Dependencies (streamlit, pandas, plotly) are declared and install cleanly
-  - Commit:
-
 - **TASK-2: Data loading and basic structure**
   Load and parse the sales CSV into a usable DataFrame.
   - [ ] Loads `data/sales-data.csv` and correctly parses date, numeric, and categorical columns
@@ -55,5 +49,11 @@ Before any milestone moves to Done, all of the following must be true:
   - Commit:
 
 ## In Progress
+
+- **TASK-1: Environment setup and project initialization**
+  Set up the project structure, dependencies, and a minimal runnable Streamlit app.
+  - [ ] `streamlit run app.py` launches without errors and shows a page title
+  - [ ] Dependencies (streamlit, pandas, plotly) are declared and install cleanly
+  - Commit:
 
 ## Done
