@@ -50,10 +50,11 @@ Before any milestone moves to Done, all of the following must be true:
 
 ## In Progress
 
+## Done
+
 - **TASK-1: Environment setup and project initialization**
   Set up the project structure, dependencies, and a minimal runnable Streamlit app.
-  - [ ] `streamlit run app.py` launches without errors and shows a page title
-  - [ ] Dependencies (streamlit, pandas, plotly) are declared and install cleanly
-  - Commit:
-
-## Done
+  - [x] `streamlit run app.py` launches without errors and shows a page title
+  - [x] Dependencies (streamlit, pandas, plotly) are declared and install cleanly
+  - Commit: 9e80c55
+  - Notes: First pass ran without stopping for per-step approval; redone in manual mode after a clean git reset, per request. Code itself (requirements.txt, app.py) was correct both times.
