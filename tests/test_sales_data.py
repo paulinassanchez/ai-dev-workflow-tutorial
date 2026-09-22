@@ -43,3 +43,28 @@ def test_load_sales_data_missing_column_raises_sales_data_error(tmp_path):
 
     with pytest.raises(SalesDataError, match="missing required columns"):
         load_sales_data(path)
+
+
+from sales_data import compute_total_orders, compute_total_sales
+
+
+def _kpi_sample_df():
+    return pd.DataFrame({
+        "date": pd.to_datetime(["2024-01-03", "2024-01-04", "2024-02-01"]),
+        "order_id": ["ORD-001", "ORD-002", "ORD-002"],
+        "category": ["Audio", "Accessories", "Accessories"],
+        "region": ["North", "South", "South"],
+        "total_amount": [159.98, 74.97, 24.99],
+    })
+
+
+def test_compute_total_sales_sums_total_amount():
+    df = _kpi_sample_df()
+
+    assert compute_total_sales(df) == 259.94
+
+
+def test_compute_total_orders_counts_unique_order_ids():
+    df = _kpi_sample_df()  # ORD-002 appears twice
+
+    assert compute_total_orders(df) == 2

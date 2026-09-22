@@ -35,3 +35,11 @@ def load_sales_data(csv_path: str) -> pd.DataFrame:
         ) from exc
 
     return df
+
+
+def compute_total_sales(df: pd.DataFrame) -> float:
+    return float(df["total_amount"].sum())
+
+
+def compute_total_orders(df: pd.DataFrame) -> int:
+    return int(df["order_id"].nunique())
