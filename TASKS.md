@@ -11,12 +11,6 @@ Before any milestone moves to Done, all of the following must be true:
 
 ## To Do
 
-- **TASK-6: Testing and refinement**
-  Validate correctness and polish the dashboard for stakeholder review.
-  - [ ] Dashboard runs with no errors or warnings and matches the PRD's Expected Output (~$116,500 total sales, 482 orders)
-  - [ ] Appearance is professional and suitable for an executive presentation
-  - Commit:
-
 - **TASK-7: Deployment to Streamlit Community Cloud**
   Publish the dashboard to a public URL for stakeholder access.
   - [ ] App is deployed to Streamlit Community Cloud and reachable via a public URL
@@ -24,6 +18,12 @@ Before any milestone moves to Done, all of the following must be true:
   - Commit:
 
 ## In Progress
+
+- **TASK-6: Testing and refinement**
+  Validate correctness and polish the dashboard for stakeholder review.
+  - [ ] Dashboard runs with no errors or warnings and matches the PRD's Expected Output (~$116,500 total sales, 482 orders)
+  - [ ] Appearance is professional and suitable for an executive presentation
+  - Commit:
 
 ## Done
 
