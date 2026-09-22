@@ -83,3 +83,32 @@ def test_compute_monthly_trend_groups_and_sorts_chronologically():
 
     assert trend["month"].astype(str).tolist() == ["2024-01", "2024-02"]
     assert trend["total_sales"].tolist() == [75.0, 100.0]
+
+
+from sales_data import compute_sales_by_category, compute_sales_by_region
+
+
+def _breakdown_sample_df():
+    return pd.DataFrame({
+        "category": ["Audio", "Accessories", "Audio"],
+        "region": ["North", "South", "South"],
+        "total_amount": [100.0, 30.0, 50.0],
+    })
+
+
+def test_compute_sales_by_category_sums_and_sorts_descending():
+    df = _breakdown_sample_df()
+
+    result = compute_sales_by_category(df)
+
+    assert result["category"].tolist() == ["Audio", "Accessories"]
+    assert result["total_sales"].tolist() == [150.0, 30.0]
+
+
+def test_compute_sales_by_region_sums_and_sorts_descending():
+    df = _breakdown_sample_df()
+
+    result = compute_sales_by_region(df)
+
+    assert result["region"].tolist() == ["North", "South"]
+    assert result["total_sales"].tolist() == [100.0, 80.0]

@@ -55,3 +55,23 @@ def compute_monthly_trend(df: pd.DataFrame) -> pd.DataFrame:
         .reset_index(drop=True)
     )
     return monthly
+
+
+def compute_sales_by_category(df: pd.DataFrame) -> pd.DataFrame:
+    return (
+        df.groupby("category")["total_amount"]
+        .sum()
+        .reset_index(name="total_sales")
+        .sort_values("total_sales", ascending=False)
+        .reset_index(drop=True)
+    )
+
+
+def compute_sales_by_region(df: pd.DataFrame) -> pd.DataFrame:
+    return (
+        df.groupby("region")["total_amount"]
+        .sum()
+        .reset_index(name="total_sales")
+        .sort_values("total_sales", ascending=False)
+        .reset_index(drop=True)
+    )
