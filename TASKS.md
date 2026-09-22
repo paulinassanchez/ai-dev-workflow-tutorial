@@ -11,13 +11,6 @@ Before any milestone moves to Done, all of the following must be true:
 
 ## To Do
 
-- **TASK-5: Category and region breakdowns**
-  Add bar charts for sales by category and by region.
-  - [ ] Category bar chart shows all categories, sorted highest to lowest
-  - [ ] Region bar chart shows all regions, sorted highest to lowest
-  - [ ] Both charts have interactive tooltips with exact values
-  - Commit:
-
 - **TASK-6: Testing and refinement**
   Validate correctness and polish the dashboard for stakeholder review.
   - [ ] Dashboard runs with no errors or warnings and matches the PRD's Expected Output (~$116,500 total sales, 482 orders)
@@ -31,6 +24,13 @@ Before any milestone moves to Done, all of the following must be true:
   - Commit:
 
 ## In Progress
+
+- **TASK-5: Category and region breakdowns**
+  Add bar charts for sales by category and by region.
+  - [ ] Category bar chart shows all categories, sorted highest to lowest
+  - [ ] Region bar chart shows all regions, sorted highest to lowest
+  - [ ] Both charts have interactive tooltips with exact values
+  - Commit:
 
 ## Done
 
