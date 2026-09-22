@@ -68,3 +68,18 @@ def test_compute_total_orders_counts_unique_order_ids():
     df = _kpi_sample_df()  # ORD-002 appears twice
 
     assert compute_total_orders(df) == 2
+
+
+from sales_data import compute_monthly_trend
+
+
+def test_compute_monthly_trend_groups_and_sorts_chronologically():
+    df = pd.DataFrame({
+        "date": pd.to_datetime(["2024-02-01", "2024-01-03", "2024-01-04"]),
+        "total_amount": [100.0, 50.0, 25.0],
+    })
+
+    trend = compute_monthly_trend(df)
+
+    assert trend["month"].astype(str).tolist() == ["2024-01", "2024-02"]
+    assert trend["total_sales"].tolist() == [75.0, 100.0]

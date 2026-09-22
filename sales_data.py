@@ -43,3 +43,15 @@ def compute_total_sales(df: pd.DataFrame) -> float:
 
 def compute_total_orders(df: pd.DataFrame) -> int:
     return int(df["order_id"].nunique())
+
+
+def compute_monthly_trend(df: pd.DataFrame) -> pd.DataFrame:
+    monthly = (
+        df.assign(month=df["date"].dt.to_period("M"))
+        .groupby("month")["total_amount"]
+        .sum()
+        .reset_index(name="total_sales")
+        .sort_values("month")
+        .reset_index(drop=True)
+    )
+    return monthly
