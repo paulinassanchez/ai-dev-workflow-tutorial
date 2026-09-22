@@ -4,6 +4,8 @@ import streamlit as st
 from sales_data import (
     SalesDataError,
     compute_monthly_trend,
+    compute_sales_by_category,
+    compute_sales_by_region,
     compute_total_orders,
     compute_total_sales,
     load_sales_data,
@@ -36,3 +38,28 @@ trend_fig.update_traces(
 )
 trend_fig.update_layout(xaxis_title="Month", yaxis_title="Sales ($)")
 st.plotly_chart(trend_fig, use_container_width=True)
+
+by_category = compute_sales_by_category(df)
+by_region = compute_sales_by_region(df)
+
+col3, col4 = st.columns(2)
+
+with col3:
+    st.subheader("Sales by Category")
+    category_fig = px.bar(by_category, x="category", y="total_sales")
+    category_fig.update_traces(
+        marker_color="#2a78d6",
+        hovertemplate="%{x}: $%{y:,.0f}<extra></extra>",
+    )
+    category_fig.update_layout(xaxis_title="Category", yaxis_title="Sales ($)")
+    st.plotly_chart(category_fig, use_container_width=True)
+
+with col4:
+    st.subheader("Sales by Region")
+    region_fig = px.bar(by_region, x="region", y="total_sales")
+    region_fig.update_traces(
+        marker_color="#2a78d6",
+        hovertemplate="%{x}: $%{y:,.0f}<extra></extra>",
+    )
+    region_fig.update_layout(xaxis_title="Region", yaxis_title="Sales ($)")
+    st.plotly_chart(region_fig, use_container_width=True)
