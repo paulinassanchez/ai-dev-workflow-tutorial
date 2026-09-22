@@ -11,12 +11,6 @@ Before any milestone moves to Done, all of the following must be true:
 
 ## To Do
 
-- **TASK-3: KPI cards implementation**
-  Display the two headline metrics at the top of the dashboard.
-  - [ ] Total Sales shown as formatted currency ($X,XXX,XXX)
-  - [ ] Total Orders shown as a formatted count
-  - Commit:
-
 - **TASK-4: Sales trend chart**
   Add a line chart showing sales over time.
   - [ ] Line chart plots sales by date (daily or monthly) with correct values
@@ -43,6 +37,12 @@ Before any milestone moves to Done, all of the following must be true:
   - Commit:
 
 ## In Progress
+
+- **TASK-3: KPI cards implementation**
+  Display the two headline metrics at the top of the dashboard.
+  - [ ] Total Sales shown as formatted currency ($X,XXX,XXX)
+  - [ ] Total Orders shown as a formatted count
+  - Commit:
 
 ## Done
 
