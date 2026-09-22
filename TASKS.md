@@ -19,13 +19,14 @@ Before any milestone moves to Done, all of the following must be true:
 
 ## In Progress
 
+## Done
+
 - **TASK-6: Testing and refinement**
   Validate correctness and polish the dashboard for stakeholder review.
-  - [ ] Dashboard runs with no errors or warnings and matches the PRD's Expected Output (~$116,500 total sales, 482 orders)
-  - [ ] Appearance is professional and suitable for an executive presentation
-  - Commit:
-
-## Done
+  - [x] Dashboard runs with no errors or warnings and matches the PRD's Expected Output (~$116,500 total sales, 482 orders)
+  - [x] Appearance is professional and suitable for an executive presentation
+  - Commit: ffddde4
+  - Notes: Full pytest suite passes (8/8, no warnings). Ran `streamlit run app.py` headlessly and curled it (HTTP 200, no errors/warnings in the server log besides the routine Watchdog performance tip) since this session has no browser access; confirmed exact values directly against the real CSV instead of visually: Total Sales $116,500.21, Total Orders 482, top category Electronics, all four regions (North, South, East, West) present — matches the PRD. Polish pass found one real gap against the design spec: the trend chart's month axis showed raw `2024-01` strings instead of the spec's `Jan 2024` format; fixed and re-verified chronological ordering holds (Plotly preserves row order for string category axes, confirmed directly).
 
 - **TASK-5: Category and region breakdowns**
   Add bar charts for sales by category and by region.
