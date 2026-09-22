@@ -38,13 +38,14 @@ Before any milestone moves to Done, all of the following must be true:
 
 ## In Progress
 
+## Done
+
 - **TASK-3: KPI cards implementation**
   Display the two headline metrics at the top of the dashboard.
-  - [ ] Total Sales shown as formatted currency ($X,XXX,XXX)
-  - [ ] Total Orders shown as a formatted count
-  - Commit:
-
-## Done
+  - [x] Total Sales shown as formatted currency ($X,XXX,XXX)
+  - [x] Total Orders shown as a formatted count
+  - Commit: 0245f29
+  - Notes: Verified against the real CSV directly ($116,500 / 482 orders, matching the PRD) rather than visually in a browser, since this session has no browser access.
 
 - **TASK-2: Data loading and basic structure**
   Load and parse the sales CSV into a usable DataFrame.
