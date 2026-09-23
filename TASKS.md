@@ -11,15 +11,16 @@ Before any milestone moves to Done, all of the following must be true:
 
 ## To Do
 
-- **TASK-7: Deployment to Streamlit Community Cloud**
-  Publish the dashboard to a public URL for stakeholder access.
-  - [ ] App is deployed to Streamlit Community Cloud and reachable via a public URL
-  - [ ] Deployed app matches local behavior (no errors, correct data)
-  - Commit:
-
 ## In Progress
 
 ## Done
+
+- **TASK-7: Deployment to Streamlit Community Cloud**
+  Publish the dashboard to a public URL for stakeholder access.
+  - [x] App is deployed to Streamlit Community Cloud and reachable via a public URL
+  - [x] Deployed app matches local behavior (no errors, correct data)
+  - Live URL: https://sales-dashboard-paulinasanchez.streamlit.app/
+  - Commit:
 
 - **TASK-6: Testing and refinement**
   Validate correctness and polish the dashboard for stakeholder review.
