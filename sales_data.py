@@ -17,6 +17,8 @@ def load_sales_data(csv_path: str) -> pd.DataFrame:
         df = pd.read_csv(csv_path)
     except FileNotFoundError as exc:
         raise SalesDataError(f"Sales data file not found: {csv_path}") from exc
+    except (pd.errors.EmptyDataError, pd.errors.ParserError) as exc:
+        raise SalesDataError(f"Sales data file could not be read: {exc}") from exc
 
     missing = [col for col in REQUIRED_COLUMNS if col not in df.columns]
     if missing:

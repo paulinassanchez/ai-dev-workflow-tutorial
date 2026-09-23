@@ -36,6 +36,14 @@ def test_load_sales_data_missing_file_raises_sales_data_error(tmp_path):
         load_sales_data(missing_path)
 
 
+def test_load_sales_data_empty_file_raises_sales_data_error(tmp_path):
+    path = tmp_path / "empty.csv"
+    path.write_text("")
+
+    with pytest.raises(SalesDataError, match="could not be read"):
+        load_sales_data(str(path))
+
+
 def test_load_sales_data_missing_column_raises_sales_data_error(tmp_path):
     rows = [["2024-01-03", "ORD-001", "Wireless Earbuds", "Audio", "North", 2, 79.99]]
     columns = VALID_COLUMNS[:-1]  # drop total_amount
