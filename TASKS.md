@@ -20,7 +20,7 @@ Before any milestone moves to Done, all of the following must be true:
   - [x] App is deployed to Streamlit Community Cloud and reachable via a public URL
   - [x] Deployed app matches local behavior (no errors, correct data)
   - Live URL: https://sales-dashboard-paulinasanchez.streamlit.app/
-  - Commit:
+  - Commit: 344338f
 
 - **TASK-6: Testing and refinement**
   Validate correctness and polish the dashboard for stakeholder review.
