@@ -34,6 +34,13 @@ def load_sales_data(csv_path: str) -> pd.DataFrame:
             f"Sales data contains values that could not be parsed: {exc}"
         ) from exc
 
+    parsed_columns = ["date", "quantity", "unit_price", "total_amount"]
+    blank = [col for col in parsed_columns if df[col].isna().any()]
+    if blank:
+        raise SalesDataError(
+            f"Sales data contains missing values in columns: {', '.join(blank)}"
+        )
+
     return df
 
 

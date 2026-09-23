@@ -45,6 +45,22 @@ def test_load_sales_data_missing_column_raises_sales_data_error(tmp_path):
         load_sales_data(path)
 
 
+def test_load_sales_data_unparseable_value_raises_sales_data_error(tmp_path):
+    rows = [["2024-01-03", "ORD-003", "Bluetooth Speaker", "Audio", "East", "not-a-number", 59.99, 179.97]]
+    path = _write_csv(tmp_path, rows, VALID_COLUMNS)
+
+    with pytest.raises(SalesDataError, match="could not be parsed"):
+        load_sales_data(path)
+
+
+def test_load_sales_data_blank_value_raises_sales_data_error(tmp_path):
+    rows = [["2024-03-10", "ORD-004", "USB Charger", "Accessories", "West", 1, 19.99, ""]]
+    path = _write_csv(tmp_path, rows, VALID_COLUMNS)
+
+    with pytest.raises(SalesDataError, match="missing values"):
+        load_sales_data(path)
+
+
 from sales_data import compute_total_orders, compute_total_sales
 
 
