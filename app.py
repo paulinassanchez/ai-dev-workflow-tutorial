@@ -24,7 +24,7 @@ total_sales = compute_total_sales(df)
 total_orders = compute_total_orders(df)
 
 col1, col2 = st.columns(2)
-col1.metric("Total Sales", f"${total_sales:,.0f}")
+col1.metric("Total Sales", f"${total_sales:,.2f}")
 col2.metric("Total Orders", f"{total_orders:,}")
 
 trend = compute_monthly_trend(df)
@@ -34,9 +34,10 @@ st.subheader("Sales Trend")
 trend_fig = px.line(trend, x="month_label", y="total_sales", markers=True)
 trend_fig.update_traces(
     line_color="#2a78d6",
-    hovertemplate="%{x}: $%{y:,.0f}<extra></extra>",
+    hovertemplate="%{x}: $%{y:,.2f}<extra></extra>",
 )
 trend_fig.update_layout(xaxis_title="Month", yaxis_title="Sales ($)")
+trend_fig.update_xaxes(tickvals=trend["month_label"][::2])
 st.plotly_chart(trend_fig, use_container_width=True)
 
 by_category = compute_sales_by_category(df)
@@ -49,7 +50,7 @@ with col3:
     category_fig = px.bar(by_category, x="total_sales", y="category", orientation="h")
     category_fig.update_traces(
         marker_color="#2a78d6",
-        hovertemplate="%{y}: $%{x:,.0f}<extra></extra>",
+        hovertemplate="%{y}: $%{x:,.2f}<extra></extra>",
     )
     category_fig.update_layout(xaxis_title="Sales ($)", yaxis_title="Category")
     category_fig.update_yaxes(autorange="reversed")
@@ -60,7 +61,7 @@ with col4:
     region_fig = px.bar(by_region, x="total_sales", y="region", orientation="h")
     region_fig.update_traces(
         marker_color="#2a78d6",
-        hovertemplate="%{y}: $%{x:,.0f}<extra></extra>",
+        hovertemplate="%{y}: $%{x:,.2f}<extra></extra>",
     )
     region_fig.update_layout(xaxis_title="Sales ($)", yaxis_title="Region")
     region_fig.update_yaxes(autorange="reversed")
